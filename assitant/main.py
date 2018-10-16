@@ -19,6 +19,7 @@ class khachsan:
     #hàm xử lí
     def xuli(self):
         a = info.info()
+        # a.introo()
         a.tentuoi()
         a.phone(a.lastname)
         b = ngay.ngay(self.con, a.lastname)
@@ -35,6 +36,7 @@ class khachsan:
         e.chendatphong()
         e.chenbill()
         f = bill.bill(self.con)
+        f.xam()
         f.inform()
 
     def adact(self):
@@ -45,7 +47,8 @@ if __name__ == '__main__':
     test = khachsan(con)
     speech.say("Xác nhận quyền quản trị.")
     while(True):
-        cmd = speech.phrase().lower()
+        # cmd = speech.phrase().lower()
+        cmd = input("Nhập câu nói của bạn:")
         print(cmd)
         if (cmd.find("có")!=-1):
             speech.say("Chuẩn bị quét khuôn mặt.")

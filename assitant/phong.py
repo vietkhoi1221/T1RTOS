@@ -19,12 +19,12 @@ class phong:
             # Thực thi câu lệnh truy vấn (Execute Query).
             cursor.execute(self.sql)
             self.a=cursor.rowcount
-            speech.say("Bên khách sạn của chúng tôi có %d loại phòng sau đây" %self.a)
+            # speech.say("Bên khách sạn của chúng tôi có %d loại phòng sau đây" %self.a)
             for row in cursor:
                 self.idlp = row['idloaiPhong']
                 self.tenloai = row['moTa']
-                speech.say("Loại thứ {} là {}".format(self.idlp,self.tenloai))
-        speech.say("Không biết quý khách muốn chọn phòng loại nào")
+                # speech.say("Loại thứ {} là {}".format(self.idlp,self.tenloai))
+        # speech.say("Không biết quý khách muốn chọn phòng loại nào")
         while True:
             self.aa=0
             # self.cmd = speech.phrase().lower()
@@ -45,8 +45,8 @@ class phong:
                         for row in cursor:
                             self.tt = row['trangThai']
                             if self.tt=="trống":
-                                speech.say("Loại %s có Phòng %s còn trống"%(self.tpe,row['idPhong']))
-                                speech.say("Quý khách có muốn chọn loại phòng này không")
+                                # speech.say("Loại %s có Phòng %s còn trống"%(self.tpe,row['idPhong']))
+                                # speech.say("Quý khách có muốn chọn loại phòng này không")
                                 self.a=1
                                 while True:
                                     # self.cmd = speech.phrase().lower()
@@ -74,19 +74,19 @@ class phong:
                 speech.say("Quý khách xin vui lòng nhắc lại.")
 
     def convenient(self):   
-        speech.say("Thêm một thông tin khác " + myweather.completeWeather("Thành phố Hồ Chí Minh"))   
-        speech.say("Thời tiết như vậy sẽ rất phù hợp với các dịch vụ sau")   
+        # speech.say("Thêm một thông tin khác " + myweather.completeWeather("Thành phố Hồ Chí Minh"))   
+        # speech.say("Thời tiết như vậy sẽ rất phù hợp với các dịch vụ sau")   
         with self.con.cursor() as cursor:
             # SQL 
             self.sql = "SELECT * FROM tienich"
             # Thực thi câu lệnh truy vấn (Execute Query).
             cursor.execute(self.sql)
-            speech.say("Có tổng cộng %d dịch vụ" % cursor.rowcount)
+            # speech.say("Có tổng cộng %d dịch vụ" % cursor.rowcount)
             for row in cursor:
                 self.IDti = row['idtienIch']
                 self.tenti = row['name']
-                speech.say("Dịch vụ số %d là %s " % (self.IDti, self.tenti))
-        speech.say("Với nhiều dịch vụ hấp dẫn như vậy, không biết quý khách muốn chọn dịch vụ nào")
+                # speech.say("Dịch vụ số %d là %s " % (self.IDti, self.tenti))
+        # speech.say("Với nhiều dịch vụ hấp dẫn như vậy, không biết quý khách muốn chọn dịch vụ nào")
 
         #chọn tiện ích
         while True:
@@ -105,7 +105,7 @@ class phong:
                         speech.say("Quý khách xin vui lòng chọn lại.")
                     else:
                         phong.idconv = self.tpeti
-                        speech.say("Quý khách đã chọn dịch vụ này. Xin cảm ơn") 
+                        # speech.say("Quý khách đã chọn dịch vụ này. Xin cảm ơn") 
                         break
             else:
                 speech.say("Quý khách xin vui lòng nhắc lại.")  

@@ -15,7 +15,7 @@ class ngay:
         self.lastname = lastname
 
     def datphong(self):
-        speech.say("Không biết anh {} muốn đặt phòng vào ngày nào.".format(self.lastname))
+        # speech.say("Không biết anh {} muốn đặt phòng vào ngày nào.".format(self.lastname))
         while True:
             # self.cmd = speech.phrase().lower()
             self.cmd = input("Nhập:")
@@ -38,7 +38,7 @@ class ngay:
                 speech.say("Quý khách xin vui lòng nhắc lại.")
 
     def nhanphong(self):
-        speech.say("Không biết anh {} muốn nhận phòng vào ngày nào.".format(self.lastname))
+        # speech.say("Không biết anh {} muốn nhận phòng vào ngày nào.".format(self.lastname))
         while True:
             # cmd = speech.phrase().lower()
             self.cmd = input("Nhập:")
@@ -82,7 +82,7 @@ class ngay:
                     ngay.idkhuyenMai = None
     #trả phòng
     def traphong(self):
-        speech.say("Không biết anh {} muốn trả phòng vào ngày nào.".format(self.lastname))
+        # speech.say("Không biết anh {} muốn trả phòng vào ngày nào.".format(self.lastname))
         while True:
             try:
                 # self.cmd = speech.phrase().lower()

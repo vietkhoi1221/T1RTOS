@@ -99,7 +99,8 @@ class changedb:
     def exe(self):
         speech.say("Hiện nay đã có 3 tính năng đọc cơ sở dữ liệu, đọc bảng và thay đổi giá. Anh muốn sử dụng chức năng nào.")
         while(True):
-            self.cmd = speech.phrase().lower()
+            # self.cmd = speech.phrase().lower()
+            self.cmd = input("Nhập vào cái gì đó:")
             print(self.cmd)
             if self.cmd.find("cơ sở dữ liệu")!=-1:
                 self.showdb()

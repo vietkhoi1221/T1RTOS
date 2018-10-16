@@ -48,7 +48,7 @@ class insertdb:
                 self.sql = "insert into Bill(idBill, idKhach, idPhong, idtienIch, idkhuyenMai, mota, total) values (DEFAULT,'%s','%s','%s','%s','',%s)" % (self.idkhach, self.idphong, self.idti, self.idkhuyenmai, self.total)
                 cursor.execute(self.sql)
             else:
-                self.sql = "insert into Bill(idBill, idKhach, idPhong, idtienIch, idkhuyenMai, mota, total) values (DEFAULT,'%s','%s','','%s','',%s) " %(self.idkhach, self.idphong, self.idkhuyenmai, self.total)
+                self.sql = "insert into Bill(idBill, idKhach, idPhong, idtienIch, idkhuyenMai, mota, total) values (DEFAULT,'%s','%s','%s',NULL,'',%s) " %(self.idkhach, self.idphong, self.idti, self.total)
                 cursor.execute(self.sql)
             # Thực thi câu lệnh truy vấn (Execute Query).
             self.con.commit() 

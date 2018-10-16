@@ -23,18 +23,18 @@ class info:
                 break
 
     def tentuoi(self):
-        speech.say("Xin chào quý khách, vui lòng cho biết họ và tên.")
+        # speech.say("Xin chào quý khách, vui lòng cho biết họ và tên.")
         while True:
-            self.cmd = speech.phrase().lower()
-            # self.cmd = input("Nhập:")
+            # self.cmd = speech.phrase().lower()
+            self.cmd = input("Nhập:")
             print(self.cmd)
             if len(self.cmd)!= 0:
-                self.lastname = self.cmd[self.cmd.rindex(" ")+1:]
-                self.firstname = self.cmd[:self.cmd.rindex(" ")]
+                info.lastname = self.cmd[self.cmd.rindex(" ")+1:]
+                info.firstname = self.cmd[:self.cmd.rindex(" ")]
                 break
             else:
                 speech.say("Quý khách xin vui lòng nhắc lại.")
-        speech.say("Địa chỉ của quý khách là gì:")
+        # speech.say("Địa chỉ của anh {} là gì:".format(info.lastname))
         while True:
             # self.cmd = speech.phrase().lower()
             self.cmd = input("Nhập:")
@@ -47,14 +47,14 @@ class info:
     
     #quốc tịch, sđt
     def phone(self,lastname):
-        speech.say("anh {} vui lòng cho thêm một số thông tin, cụ thể là quốc tịch.".format(lastname))  
+        # speech.say("anh {} vui lòng cho thêm một số thông tin, cụ thể là quốc tịch.".format(lastname))  
         while True:
             # self.cmd = speech.phrase().lower()
             self.cmd = input("Nhập:")
             print(self.cmd)
             if len(self.cmd) !=0 :
                 info.qtich = self.cmd
-                speech.say("Có số điện thoại thì tốt quá")
+                # speech.say("Có số điện thoại thì tốt quá")
                 while True:
                     # self.cmd = speech.phrase().lower()  
                     self.cmd = input("Nhập:")
