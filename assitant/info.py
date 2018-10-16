@@ -25,8 +25,8 @@ class info:
     def tentuoi(self):
         speech.say("Xin chào quý khách, vui lòng cho biết họ và tên.")
         while True:
-            # self.cmd = speech.phrase().lower()
-            self.cmd = input("Nhập:")
+            self.cmd = speech.phrase().lower()
+            # self.cmd = input("Nhập:")
             print(self.cmd)
             if len(self.cmd)!= 0:
                 self.lastname = self.cmd[self.cmd.rindex(" ")+1:]

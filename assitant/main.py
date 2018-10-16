@@ -6,7 +6,8 @@ import insertdb
 import phong
 import calucate
 import bill
-
+import detect
+import change
 #cấu hình để truy cập database
 con = pymysql.connect(host ='localhost', user = 'root', port = 3306,
                      password = 't0cnhutuyet', db = 'hotel', cursorclass = pymysql.cursors.DictCursor)
@@ -36,24 +37,23 @@ class khachsan:
         f = bill.bill(self.con)
         f.inform()
 
-test = khachsan(con)
-test.xuli()
+    def adact(self):
+        g = change.changedb(self.con)
+        g.exe()
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+if __name__ == '__main__':
+    test = khachsan(con)
+    speech.say("Xác nhận quyền quản trị.")
+    while(True):
+        cmd = speech.phrase().lower()
+        print(cmd)
+        if (cmd.find("có")!=-1):
+            speech.say("Chuẩn bị quét khuôn mặt.")
+            if(detect.recog() == True):
+                test.adact()
+        elif (cmd.find("không")!=-1):
+            test.xuli()
+        elif (cmd.find("thoát")!=-1):
+            break
+        else:
+            speech.say("Vui lòng nhắc lại.")
