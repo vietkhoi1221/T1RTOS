@@ -16,6 +16,7 @@ class ngay:
 
     def datphong(self):
         # speech.say("Không biết anh {} muốn đặt phòng vào ngày nào.".format(self.lastname))
+        # print("Không biết anh {} muốn đặt phòng vào ngày nào.".format(self.lastname))
         while True:
             # self.cmd = speech.phrase().lower()
             self.cmd = input("Nhập:")
@@ -34,11 +35,14 @@ class ngay:
                     break
                 else:
                     speech.say("Quý khách xin vui lòng nhắc lại.")
+                    print("Quý khách xin vui lòng nhắc lại.")
             except:
-                speech.say("Quý khách xin vui lòng nhắc lại.")
+                speech.say("Có lỗi. Quý khách xin vui lòng nhắc lại.")
+                print("Có lỗi. Quý khách xin vui lòng nhắc lại.")
 
     def nhanphong(self):
         # speech.say("Không biết anh {} muốn nhận phòng vào ngày nào.".format(self.lastname))
+        # print("Không biết anh {} muốn nhận phòng vào ngày nào.".format(self.lastname))
         while True:
             # cmd = speech.phrase().lower()
             self.cmd = input("Nhập:")
@@ -55,8 +59,10 @@ class ngay:
                     break
                 else:
                     speech.say("Quý khách xin vui lòng nhắc lại.")
+                    print("Quý khách xin vui lòng nhắc lại.")
             except:
-                speech.say("Quý khách xin vui lòng nhắc lại.")
+                speech.say("Có lỗi. Quý khách xin vui lòng nhắc lại.")
+                print("Có lỗi. Quý khách xin vui lòng nhắc lại.")
 
         #so sánh
         with self.con.cursor() as cursor:    
@@ -78,11 +84,13 @@ class ngay:
                         self.getMa = self.row['ten']
                         self.discount = self.row['tienGiam']
                     speech.say("Anh đã nhận được mã {} có hạn từ {} đến {} , giảm {} phần trăm".format(self.getMa, self.kmstart, self.kmstop, self.discount))
+                    print("Anh đã nhận được mã {} có hạn từ {} đến {} , giảm {} phần trăm".format(self.getMa, self.kmstart, self.kmstop, self.discount))
                 else:
                     ngay.idkhuyenMai = None
     #trả phòng
     def traphong(self):
         # speech.say("Không biết anh {} muốn trả phòng vào ngày nào.".format(self.lastname))
+        # print("Không biết anh {} muốn trả phòng vào ngày nào.".format(self.lastname))
         while True:
             try:
                 # self.cmd = speech.phrase().lower()
@@ -99,5 +107,8 @@ class ngay:
                     break
                 else:
                     speech.say("Quý khách xin vui lòng nhắc lại.")
+                    print("Quý khách xin vui lòng nhắc lại.")
             except:
-                speech.say("Quý khách xin vui lòng nhắc lại.")
+                speech.say("Có lỗi. Quý khách xin vui lòng nhắc lại.")
+                print("Có lỗi. Quý khách xin vui lòng nhắc lại.")
+

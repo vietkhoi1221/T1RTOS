@@ -24,9 +24,10 @@ class info:
 
     def tentuoi(self):
         # speech.say("Xin chào quý khách, vui lòng cho biết họ và tên.")
+        print("Xin chào quý khách, vui lòng cho biết họ và tên.")
         while True:
-            # self.cmd = speech.phrase().lower()
-            self.cmd = input("Nhập:")
+            self.cmd = speech.phrase().lower()
+            # self.cmd = input("Nhập:")
             print(self.cmd)
             if len(self.cmd)!= 0:
                 info.lastname = self.cmd[self.cmd.rindex(" ")+1:]
@@ -34,30 +35,35 @@ class info:
                 break
             else:
                 speech.say("Quý khách xin vui lòng nhắc lại.")
+                print("Quý khách xin vui lòng nhắc lại.")
         # speech.say("Địa chỉ của anh {} là gì:".format(info.lastname))
+        print("Địa chỉ của anh {} là gì:".format(info.lastname))
         while True:
-            # self.cmd = speech.phrase().lower()
-            self.cmd = input("Nhập:")
+            self.cmd = speech.phrase().lower()
+            # self.cmd = input("Nhập:")
             print(self.cmd)
             if len(self.cmd)!= 0:
                 info.addr=self.cmd
                 break
             else:
-                speech.say("Quý khách xin vui lòng nhắc lại.")
+                # speech.say("Quý khách xin vui lòng nhắc lại.")
+                print("Quý khách xin vui lòng nhắc lại.")
     
     #quốc tịch, sđt
-    def phone(self,lastname):
-        # speech.say("anh {} vui lòng cho thêm một số thông tin, cụ thể là quốc tịch.".format(lastname))  
+    def phone(self):
+        # speech.say("anh {} vui lòng cho thêm một số thông tin, cụ thể là quốc tịch.".format(info.lastname))  
+        print("anh {} vui lòng cho thêm một số thông tin, cụ thể là quốc tịch.".format(info.lastname))  
         while True:
-            # self.cmd = speech.phrase().lower()
-            self.cmd = input("Nhập:")
+            self.cmd = speech.phrase().lower()
+            # self.cmd = input("Nhập:")
             print(self.cmd)
             if len(self.cmd) !=0 :
                 info.qtich = self.cmd
                 # speech.say("Có số điện thoại thì tốt quá")
+                print("Có số điện thoại thì tốt quá")
                 while True:
-                    # self.cmd = speech.phrase().lower()  
-                    self.cmd = input("Nhập:")
+                    self.cmd = speech.phrase().lower()  
+                    # self.cmd = input("Nhập:")
                     if len(self.cmd) !=0:
                         for i in range(0,len(self.cmd)):
                             if self.cmd[i].isdigit():
@@ -66,4 +72,5 @@ class info:
                         break
                 break
             else:
-                speech.say("Quý khách xin vui lòng nhắc lại quốc tịch.")
+                # speech.say("Quý khách xin vui lòng nhắc lại quốc tịch.")
+                print("Quý khách xin vui lòng nhắc lại quốc tịch.")

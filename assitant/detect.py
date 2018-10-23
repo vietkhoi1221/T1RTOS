@@ -34,7 +34,10 @@ def recog():
             break
         if (Id=="Khoi"):
             speech.say("Xác nhận thành công.")
+            print("Xác nhận thành công.")
             return True
+            cam.release()
+            cv2.destroyAllWindows()
             break
         print(Id)
     cam.release()
